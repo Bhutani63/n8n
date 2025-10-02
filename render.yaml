@@ -6,10 +6,10 @@ services:
     image:
       url: docker.io/n8nio/n8n:latest
     startCommand: n8n user-management:reset
-   envVars:
+    envVars:
       - key: N8N_ENCRYPTION_KEY
-       generateValue: true
-      # database vars here ...
+        generateValue: true
+      # your database environment variables...
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "true"
       - key: N8N_TRUST_HOST
