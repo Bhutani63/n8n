@@ -9,6 +9,11 @@ services:
     envVars:
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
+      # postgresql env vars...
+      - key: N8N_PORT
+        value: ${PORT}
+      - key: N8N_HOST
+        value: 0.0.0.0
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_DATABASE
