@@ -6,14 +6,17 @@ services:
     image:
       url: docker.io/n8nio/n8n:latest
     startCommand: n8n user-management:reset
-    envVars:
+   envVars:
       - key: N8N_ENCRYPTION_KEY
-        generateValue: true
-      # postgresql env vars...
-      - key: N8N_PORT
-        value: ${PORT}
-      - key: N8N_HOST
-        value: 0.0.0.0
+       generateValue: true
+      # database vars here ...
+      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+        value: "true"
+      - key: N8N_TRUST_HOST
+        value: "true"
+      - key: N8N_RUNNERS_ENABLED
+        value: "true"
+
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_DATABASE
