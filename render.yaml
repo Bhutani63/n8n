@@ -6,9 +6,7 @@ services:
     image:
       url: docker.io/n8nio/n8n:latest
     startCommand: n8n user-management:reset
-
     envVars:
-      # existing environment variables
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
       - key: DB_TYPE
@@ -29,14 +27,6 @@ services:
         fromDatabase:
           name: n8n-db
           property: user
-
-      # Basic auth variables commented out correctly
-      # - key: N8N_BASIC_AUTH_ACTIVE
-      #   value: "true"
-      # - key: N8N_BASIC_AUTH_USER
-      #   value: simranbhutani63@gmail.com
-      # - key: N8N_BASIC_AUTH_PASSWORD
-      #   value: Simran@12
 
 databases:
   - name: n8n-db
